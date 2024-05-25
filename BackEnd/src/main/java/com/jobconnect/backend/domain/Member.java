@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 public class Member {
 
+    Long meId;
 
 
 
