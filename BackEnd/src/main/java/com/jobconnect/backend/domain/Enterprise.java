@@ -1,12 +1,18 @@
 package com.jobconnect.backend.domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Getter
+@NoArgsConstructor
 @Entity
 public class Enterprise {
 
@@ -32,10 +38,26 @@ public class Enterprise {
     @Column(nullable = false)
     private Integer enState;
 
-    private LocalDateTime createdDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
+    private Date createdDate;
 
-    private LocalDateTime updatedDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    @LastModifiedDate
+    private Date updatedDate;
 
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.REMOVE)
     private List<Job> jobList;
+
+
+    @Builder
+    public Enterprise(String enEmail, String enPw, String enRep, String enBusinessNum, String enPhone, Integer enState, Date createdDate) {
+        this.enEmail = enEmail;
+        this.enPw = enPw;
+        this.enRep = enRep;
+        this.enBusinessNum = enBusinessNum;
+        this.enPhone = enPhone;
+        this.enState = enState;
+        this.createdDate = createdDate;
+    }
 }

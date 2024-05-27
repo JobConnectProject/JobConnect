@@ -1,8 +1,6 @@
 package com.jobconnect.backend.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -11,12 +9,12 @@ import java.time.LocalDateTime;
 @Getter
 public class Job {
 
-    @Column(nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long joNum;
 
     @ManyToOne
     private Enterprise enterprise;
-
 
     @Column(nullable = false)
     private String joName;
