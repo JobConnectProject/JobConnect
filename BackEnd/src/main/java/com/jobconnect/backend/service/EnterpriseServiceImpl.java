@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 @RequiredArgsConstructor
 @Service
 public class EnterpriseServiceImpl implements EnterpriseService {
@@ -48,7 +49,6 @@ public class EnterpriseServiceImpl implements EnterpriseService {
         return  enterpriseRepository.findAll();
     }
 
-    @Transactional
     @Override
     public void updateEnterprise(Long enId, EnterpriseUpdateDto dto){
         Optional<Enterprise> optionalEnterprise = enterpriseRepository.findById(enId);
