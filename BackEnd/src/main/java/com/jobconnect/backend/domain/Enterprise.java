@@ -60,4 +60,11 @@ public class Enterprise {
         this.enState = enState;
         this.createdDate = createdDate;
     }
+
+    public void updateEnterprise(String enPw, String enRep, String enPhone, Date updatedDate){
+        this.enPw = enPw;
+        this.enRep = enRep;
+        this.enPhone = enPhone;
+        this.updatedDate = updatedDate;
+    }
 }
