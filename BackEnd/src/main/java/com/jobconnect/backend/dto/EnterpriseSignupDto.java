@@ -17,17 +17,15 @@ public class EnterpriseSignupDto {
     private String enBusinessNum;
     private String enPhone;
     private Integer enState;
-    private Date createdDate = new Date();
-
 
     @Builder
-    public EnterpriseSignupDto(String enEmail, String enPw, String enRep, String enBusinessNum, String enPhone, Integer enState, Date createdDate){
+    public EnterpriseSignupDto(String enEmail, String enPw, String enRep, String enBusinessNum, String enPhone, Integer enState){
         this.enEmail = enEmail;
         this.enPw = enPw;
         this.enRep = enRep;
         this.enBusinessNum = enBusinessNum;
         this.enPhone = enPhone;
         this.enState = enState;
-        this.createdDate = createdDate;
+
     }
 }

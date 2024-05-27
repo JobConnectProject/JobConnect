@@ -12,13 +12,11 @@ public class EnterpriseUpdateDto {
     private String enPw;
     private String enRep;
     private String enPhone;
-    private Date updatedDate = new Date();
 
     @Builder
-    public EnterpriseUpdateDto(String enPw,String enRep, String enPhone, Date updatedDate){
+    public EnterpriseUpdateDto(String enPw,String enRep, String enPhone){
         this.enPw = enPw;
         this.enRep = enRep;
         this.enPhone = enPhone;
-        this.updatedDate = updatedDate;
     }
 }
