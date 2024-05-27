@@ -51,8 +51,9 @@ public class EnterpriseService {
         }else{
             throw new IllegalArgumentException("유저 없음");
         }
+    }
 
-
+    public void deleteEnterprise(Long enId){
 
     }
 
