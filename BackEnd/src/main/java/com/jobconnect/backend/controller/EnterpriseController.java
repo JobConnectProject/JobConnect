@@ -3,6 +3,7 @@ package com.jobconnect.backend.controller;
 import com.jobconnect.backend.domain.Enterprise;
 import com.jobconnect.backend.dto.EnterpriseSignupDto;
 import com.jobconnect.backend.dto.EnterpriseUpdateDto;
+import com.jobconnect.backend.service.EnterpriseService;
 import com.jobconnect.backend.service.EnterpriseServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,14 +18,7 @@ import java.util.Optional;
 @RequestMapping("/api/enterprises")
 public class EnterpriseController {
 
-    private final EnterpriseServiceImpl enterpriseService;
-
-
-    @PostMapping("/signup")
-    public ResponseEntity<String> signupEnterprise(@RequestBody EnterpriseSignupDto dto){
-        enterpriseService.createEnterprise(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Enterprise signup success");
-    }
+    private final EnterpriseService enterpriseService;
 
     @GetMapping("/{enId}")
     public ResponseEntity<Optional<Enterprise>> getEnterpriseById(@PathVariable Long enId){
@@ -32,10 +26,16 @@ public class EnterpriseController {
        return ResponseEntity.ok(enterprise);
     }
 
-    @GetMapping("/list")
+    @GetMapping
     public ResponseEntity<List<Enterprise>> getAllEnterprises(){
         List<Enterprise> enterpriseList = enterpriseService.getAllEnterprises();
         return ResponseEntity.ok(enterpriseList);
+    }
+
+    @PostMapping
+    public ResponseEntity<String> signupEnterprise(@RequestBody EnterpriseSignupDto dto){
+        enterpriseService.createEnterprise(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Enterprise signup success");
     }
 
     @PutMapping("/{enId}")
