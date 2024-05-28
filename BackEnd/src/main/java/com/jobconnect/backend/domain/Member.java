@@ -15,37 +15,36 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name = "me_id")
     private Long meId;
 
-    @Column(length = 30, nullable = false)
+    @Column(name = "me_email", length = 30, nullable = false, unique = true)
     private String meEmail;
 
-    @Column(length = 15, nullable = false)
+    @Column(name = "me_pw", length = 15, nullable = false)
     private String mePw;
 
-    @Column(length = 20, nullable = false)
+    @Column(name = "me_name", length = 20, nullable = false)
     private String meName;
 
-    @Column(nullable = false)
+    @Column(name = "me_birth", nullable = false)
     private LocalDate meBirth;
 
-    @Column(nullable = false)
+    @Column(name = "me_gender", nullable = false)
     private int meGender;
 
-    @Column(length = 13, nullable = false)
+    @Column(name = "me_phone", length = 13, nullable = false)
     private String mePhone;
 
-    @Column(nullable = false)
+    @Column(name = "me_authority", nullable = false)
     private int meAuthority;
 
-    @Column(nullable = false)
-    private LocalDate meCreatAt;
+    @Column(name = "me_create_at", nullable = false)
+    private LocalDate meCreateAt;
 
-    @Column(nullable = false)
+    @Column(name = "me_update_at", nullable = false)
     private LocalDate meUpdateAt;
 
-    @Column(nullable = false)
+    @Column(name = "me_pw_update_at", nullable = false)
     private LocalDate mePwUpdateAt;
-
 }
