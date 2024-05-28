@@ -19,6 +19,7 @@ public class Job {
     private Long joNum;
 
     @ManyToOne
+    @JoinColumn(name = "enId", nullable = false)
     private Enterprise enterprise;
 
     @Column(nullable = false)

@@ -1,8 +1,7 @@
-package com.jobconnect.backend.dto;
+package com.jobconnect.backend.dto.job;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 

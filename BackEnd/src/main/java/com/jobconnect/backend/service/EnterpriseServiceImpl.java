@@ -2,8 +2,8 @@ package com.jobconnect.backend.service;
 
 
 import com.jobconnect.backend.domain.Enterprise;
-import com.jobconnect.backend.dto.EnterpriseSignupDto;
-import com.jobconnect.backend.dto.EnterpriseUpdateDto;
+import com.jobconnect.backend.dto.enterprise.EnterpriseSignupDto;
+import com.jobconnect.backend.dto.enterprise.EnterpriseUpdateDto;
 import com.jobconnect.backend.repository.EnterpriseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

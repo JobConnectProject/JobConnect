@@ -1,11 +1,9 @@
-package com.jobconnect.backend.dto;
+package com.jobconnect.backend.dto.enterprise;
 
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @Getter
 @NoArgsConstructor
@@ -26,6 +24,5 @@ public class EnterpriseSignupDto {
         this.enBusinessNum = enBusinessNum;
         this.enPhone = enPhone;
         this.enState = enState;
-
     }
 }

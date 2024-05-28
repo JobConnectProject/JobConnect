@@ -1,8 +1,8 @@
 package com.jobconnect.backend.service;
 
 import com.jobconnect.backend.domain.Enterprise;
-import com.jobconnect.backend.dto.EnterpriseSignupDto;
-import com.jobconnect.backend.dto.EnterpriseUpdateDto;
+import com.jobconnect.backend.dto.enterprise.EnterpriseSignupDto;
+import com.jobconnect.backend.dto.enterprise.EnterpriseUpdateDto;
 
 import java.util.List;
 import java.util.Optional;

@@ -2,8 +2,8 @@ package com.jobconnect.backend.service;
 
 
 import com.jobconnect.backend.domain.Job;
-import com.jobconnect.backend.dto.JobCreateDto;
-import com.jobconnect.backend.dto.JobUpdateDto;
+import com.jobconnect.backend.dto.job.JobCreateDto;
+import com.jobconnect.backend.dto.job.JobUpdateDto;
 import com.jobconnect.backend.repository.JobRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

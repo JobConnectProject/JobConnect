@@ -1,10 +1,9 @@
 package com.jobconnect.backend.controller;
 
 import com.jobconnect.backend.domain.Enterprise;
-import com.jobconnect.backend.dto.EnterpriseSignupDto;
-import com.jobconnect.backend.dto.EnterpriseUpdateDto;
+import com.jobconnect.backend.dto.enterprise.EnterpriseSignupDto;
+import com.jobconnect.backend.dto.enterprise.EnterpriseUpdateDto;
 import com.jobconnect.backend.service.EnterpriseService;
-import com.jobconnect.backend.service.EnterpriseServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

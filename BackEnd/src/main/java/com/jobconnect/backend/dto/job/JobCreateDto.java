@@ -1,4 +1,4 @@
-package com.jobconnect.backend.dto;
+package com.jobconnect.backend.dto.job;
 
 import lombok.Builder;
 import lombok.Getter;

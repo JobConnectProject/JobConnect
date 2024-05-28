@@ -1,10 +1,8 @@
-package com.jobconnect.backend.dto;
+package com.jobconnect.backend.dto.enterprise;
 
 
 import lombok.Builder;
 import lombok.Getter;
-
-import java.util.Date;
 
 @Getter
 public class EnterpriseUpdateDto {
