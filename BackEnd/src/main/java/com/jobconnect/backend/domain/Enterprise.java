@@ -4,18 +4,14 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.cglib.core.Local;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import java.time.LocalDateTime;
-import java.util.Date;
+
 import java.util.List;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Enterprise {
+public class Enterprise extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,26 +35,9 @@ public class Enterprise {
     @Column(nullable = false)
     private Integer enState;
 
-    @Column(updatable = false)
-    @CreatedDate
-    private LocalDateTime createdDate;
-
-    @LastModifiedDate
-    private LocalDateTime updatedDate;
-
     @OneToMany(mappedBy = "enterprise", cascade = CascadeType.REMOVE)
     private List<Job> jobList;
 
-    @PrePersist
-    protected void onCreate() {
-        createdDate = LocalDateTime.now();
-        updatedDate = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedDate = LocalDateTime.now();
-    }
 
     @Builder
     public Enterprise(String enEmail, String enPw, String enRep, String enBusinessNum, String enPhone, Integer enState) {

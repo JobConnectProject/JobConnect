@@ -4,15 +4,13 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
 @Entity
-public class Job {
+public class Job extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -61,13 +59,6 @@ public class Job {
 
     private String joContent;
 
-    @Column(updatable = false)
-    @CreatedDate
-    private LocalDateTime joRegDate;
-
-    @LastModifiedDate
-    private LocalDateTime joUpDate;
-
     @Column(nullable = false)
     private Integer joViews;
 
@@ -80,18 +71,6 @@ public class Job {
     private LocalDateTime joDeadDate;
 
     private LocalDateTime joEndDate;
-
-
-    @PrePersist
-    protected void onCreate() {
-        joRegDate = LocalDateTime.now();
-        joUpDate = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        joUpDate = LocalDateTime.now();
-    }
 
     @Builder
     public Job(String joName, String joTitle, Integer joGender, String joAge, String joEdu,
