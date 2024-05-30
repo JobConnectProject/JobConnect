@@ -47,4 +47,9 @@ public class Member {
 
     @Column(name = "me_pw_update_at", nullable = false)
     private LocalDate mePwUpdateAt;
+
+    public void updateMember(String mePw, String mePhone) {
+        this.mePw = mePw;
+        this.mePhone = mePhone;
+    }
 }
